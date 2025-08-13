@@ -1,0 +1,30 @@
+
+NAME                     RECOMMENDED DESCRIPTION        SOURCE
+bash-streaming           [x]         openfaas-incubator Bash Streaming template
+dockerfile               [x]         openfaas           Classic Dockerfile template
+dotnet8-csharp           [x]         openfaas           C# template using WebApplication
+golang-middleware        [x]         openfaas           HTTP middleware interface in Go
+java11-vert-x            [x]         openfaas           Java 11 Vert.x template
+node22                   [x]         openfaas           HTTP-based Node 22 template
+php8                     [x]         openfaas           Classic PHP 8 template
+python3-http             [x]         openfaas           Python 3 with Flask and HTTP
+python3-http-debian      [x]         openfaas           Python 3 with Flask and HTTP based on Debian
+ruby-http                [x]         openfaas           Ruby 3.3.6 HTTP template
+cobol                    [ ]         devries            COBOL Template
+perl-alpine              [ ]         tmiklas            Perl language template based on Alpine image
+powershell-http-template [ ]         openfaas-incubator Powershell Core HTTP Ubuntu:16.04 template
+powershell-template      [ ]         openfaas-incubator Powershell Core Ubuntu:16.04 template
+quarkus-native           [ ]         pmlopes            Quarkus.io native image template
+rust                     [ ]         openfaas-incubator Community Rust template
+rust-http                [ ]         openfaas-incubator Community Rust template with HTTP bindings
+bun-express              [ ]         openfaas           HTTP-based template using bun
+golang-http              [ ]         openfaas           Request/response style HTTP template
+java11                   [ ]         openfaas           Java 11 template
+java17                   [ ]         openfaas           Java 17 template
+node18                   [ ]         openfaas           HTTP-based Node 18 template
+node20                   [ ]         openfaas           HTTP-based Node 20 template
+php7                     [ ]         openfaas           Classic PHP 7 template
+puppeteer-nodelts        [ ]         alexellis          A puppeteer template for headless Chrome
+python3-flask            [ ]         openfaas           Python 3 Flask template
+python3-flask-debian     [ ]         openfaas           Python 3 Flask template based on Debian
+
