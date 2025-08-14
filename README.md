@@ -58,6 +58,39 @@ chmod +x login.sh
 
 ---
 
+## 🔧 Установка с нуля (без виртуалки)
+1. Клонируйте репозиторий и перейдите в директорию с функциями
+```bash
+git clone https://github.com/gelubswag/OpenFaaS-calculator-service.git
+cd OpenFaaS-book-service/functions
+```
+
+2. Установите зависимости:
+```bash
+chmod +x install_dependencies.sh
+./install_dependencies.sh
+```
+
+3. Авторизация в DockerHub
+```bash
+docker login --username <ваш_логин> --password <ваш_пароль>
+```
+
+4. Разверните OpenFaaS:
+```bash
+arkade install openfaas
+faas-cli template store pull node22
+```
+
+5. Настройте авторизацию и туннель:
+```bash
+PASSWORD=$(kubectl get secret -n openfaas basic-auth   -o jsonpath="{.data.basic-auth-password}" | base64 --decode)
+
+kubectl port-forward svc/gateway -n openfaas 8000:8080 &
+echo $PASSWORD | faas-cli login --username admin --password-stdin
+```
+---
+
 ## 🛠 Быстрый старт (после настройки VM)
 
 1. **Укажите свой DockerHub-репозиторий** в `stack.yml`:
@@ -90,34 +123,6 @@ faas-cli deploy
 
 ---
 
-## 🔧 Установка с нуля (без виртуалки)
-1. Клонируйте репозиторий и перейдите в директорию с функциями
-```bash
-git clone https://github.com/gelubswag/OpenFaaS-calculator-service.git
-cd OpenFaaS-book-service/functions
-```
-
-2. Установите зависимости:
-```bash
-chmod +x install_dependencies.sh
-./install_dependencies.sh
-```
-
-3. Разверните OpenFaaS:
-```bash
-arkade install openfaas
-faas-cli template store pull node22
-```
-
-4. Настройте авторизацию и туннель:
-```bash
-PASSWORD=$(kubectl get secret -n openfaas basic-auth   -o jsonpath="{.data.basic-auth-password}" | base64 --decode)
-
-kubectl port-forward svc/gateway -n openfaas 8000:8080 &
-echo $PASSWORD | faas-cli login --username admin --password-stdin
-```
-
----
 
 ## 📊 OpenFaaS vs AWS Lambda
 
